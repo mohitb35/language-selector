@@ -1,10 +1,16 @@
 import React from 'react';
 
+import LanguageContext from '../contexts/languageContext';
+
 class Field extends React.Component {
+
+	static contextType = LanguageContext;
+
 	render() {
+		const label = this.context === 'english' ? 'Name' : 'Naam';
 		return (
 			<div className="ui field">
-				<label>Name</label>
+				<label>{label}</label>
 				<input type="text" />
 			</div>
 		)
